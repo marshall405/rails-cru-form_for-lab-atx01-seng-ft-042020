@@ -1,0 +1,17 @@
+<h1> Song </h1>
+
+<div class="song_container">
+    <h1> <%= @song.name %> </h1>
+    <%= link_to artist_path(@song.artist_id) do %>
+        <h4> By: <%= @song.artist.name %></h4>
+    <% end %>
+    <%= link_to genre_path(@song.genre_id) do %>
+        <h4> Genre: <%= @song.genre.name %></h4>
+    <% end %>
+    <%= link_to edit_song_path(@song) do %>
+        <div class="button"> Edit Song </div>
+    <% end %>
+    <%= link_to songs_path do %>
+        <div class="button"> See All Songs </div>
+    <% end %>
+</div>

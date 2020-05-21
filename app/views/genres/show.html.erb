@@ -1,0 +1,10 @@
+<h1> Genre </h1>
+
+<h1><%= @genre.name %></h1>
+<%= link_to edit_genre_path(@genre) do %>
+    <div class="button"> Edit Genre </div>
+<% end %>
+
+<% @genre.songs.each do |song| %>
+    <h4> <%=song.name %> by <%=song.artist.name%>  </h4>
+<% end %>

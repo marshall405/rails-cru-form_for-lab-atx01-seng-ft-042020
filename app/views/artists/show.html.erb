@@ -1,0 +1,19 @@
+<h1> Artist </h1>
+
+<div class="artist_container">
+    <h1> <%= @artist.name %> </h1>
+    <p><%= @artist.bio %></p>
+    <ul>
+    <% @artist.songs.each do |song| %>
+        <%= link_to song_path(song) do %>
+            <li><%= song.name %></li>
+        <% end %>
+    <% end %>
+    </ul>
+    <%= link_to edit_artist_path(@artist) do %>
+        <div class="button"> Edit Artist </div>
+    <% end %>
+    <%= link_to artists_path do %>
+        <div class="button"> See All Artists </div>
+    <% end %>
+</div>
